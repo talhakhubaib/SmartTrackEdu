@@ -1,0 +1,124 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+    Add Student
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-dark">
+                    <div class="card-header">
+                        <h3 class="card-title">Add Student</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    {% url 'add_student_save' as action_path %}
+                    {% include 'hod_template/form_template.html' with messages=messages form=form action_path=action_path button_text="Add" %}
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+{% endblock main_content %}
+
+{% block custom_js %}
+<script>
+    $(document).ready(function() {
+        // Keyup event to check if email already exists
+        $("#id_email").keyup(function() {
+            var email = $(this).val();
+
+            if (email != "") {
+                $.ajax({
+                    url: '{% url 'check_email_exist' %}',
+                    type: 'POST',
+                    data: { email: email }
+                })
+                .done(function(response) {
+                    if (response == "True") {
+                        $(".email_error").remove();
+                        $("<span class='email_error' style='color: red; padding: 5px; font-weight: bold;'> Email Not Available. </span>").insertAfter("#id_email")
+                    } else {
+                        $(".email_error").remove();
+                        $("<span class='email_error' style='color: green; padding: 5px; font-weight: bold;'> Email Available. </span>").insertAfter("#id_email")
+                    }
+                })
+                .fail(function() {
+                    console.log("Failed");
+                })
+            } else {
+                $(".email_error").remove();
+            }
+
+        });
+
+        // Keyup event to check if username already exists
+        $("#id_username").keyup(function() {
+            var username = $(this).val();
+
+            if (username != "") {
+                $.ajax({
+                    url: '{% url 'check_username_exist' %}',
+                    type: 'POST',
+                    data: { username: username }
+                })
+                .done(function(response) {
+                    if (response == "True") {
+                        $(".username_error").remove();
+                        $("<span class='username_error' style='color: red; padding: 5px; font-weight: bold;'> Username Not Available. </span>").insertAfter("#id_username")
+                    } else {
+                        $(".username_error").remove();
+                        $("<span class='username_error' style='color: green; padding: 5px; font-weight: bold;'> Username Available. </span>").insertAfter("#id_username")
+                    }
+                })
+                .fail(function() {
+                    console.log("Failed");
+                })
+            } else {
+                $(".username_error").remove();
+            }
+
+        });
+
+        $("#submit_student_btn").click(function() {
+            // Check if all fields are filled
+            var email = $("#id_email").val();
+            var username = $("#id_username").val();
+            var password = $("input[name='password']").val();
+            var firstName = $("input[name='first_name']").val();
+            var lastName = $("input[name='last_name']").val();
+            var address = $("textarea[name='address']").val();
+
+            if (email.trim() === "" || username.trim() === "" || password.trim() === "" || firstName.trim() === "" ||
+                lastName.trim() === "" || address.trim() === "") {
+                alert("Please fill in all details.");
+                return;
+            }
+
+            // Check if the email is valid
+            if (!isValidEmail(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Submit the form if all fields are filled
+            $("#addStudentForm").submit();
+        });
+
+        // Function to validate email format
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    });
+</script>
+{% endblock custom_js %}
