@@ -1,0 +1,104 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+    Add Session Year
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-dark">
+                    <div class="card-header">
+                        <h3 class="card-title">Add Session Year</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form role="form" id="addSessionForm" method="POST" action="{% url 'add_session_save' %}">
+                        {% csrf_token %}
+                        <!-- Display Messages -->
+                        {% if messages %}
+                        <div class="form-group">
+                            <div class="col-12">
+                                {% for message in messages %}
+                                {% if message.tags == "error" %}
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                                    {{ message }}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                {% elif message.tags == "success" %}
+                                <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                                    {{ message }}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="session_start_year">Session Start Year</label>
+                                <input type="date" class="form-control" name="session_start_year" id="session_start_year" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="session_end_year">Session End Year</label>
+                                <input type="date" class="form-control" name="session_end_year" id="session_end_year" required>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-warning" style="color: black; font-weight: 510;">Add</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+{% endblock main_content %}
+
+{% block custom_js %}
+<script>
+    $(document).ready(function () {
+        $('#addSessionForm').submit(function (event) {
+            var startYear = new Date($('#session_start_year').val());
+            var endYear = new Date($('#session_end_year').val());
+            var currentDate = new Date();
+
+            // Check if start year and end year are filled out
+            if (!startYear || !endYear) {
+                event.preventDefault();
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Check if end year is greater than start year
+            if (endYear <= startYear) {
+                event.preventDefault();
+                alert('End year must be greater than start year.');
+                return;
+            }
+
+            // Check if end year is before the current date
+            if (endYear < currentDate) {
+                event.preventDefault();
+                alert('End year cannot be before the current date.');
+                return;
+            }
+        });
+    });
+</script>
+{% endblock custom_js %}
