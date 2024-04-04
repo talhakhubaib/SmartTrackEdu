@@ -775,10 +775,10 @@ def admin_profile_update(request):
             if password != None and password != "":
                 customuser.set_password(password)
             customuser.save()
-            messages.success(request, "Profile Updated Successfully")
+            messages.success(request, "Profile Updated Successfully.")
             return redirect('admin_profile')
         except:
-            messages.error(request, "Failed to Update Profile")
+            messages.error(request, "Failed to Update Profile.")
             return redirect('admin_profile')
     
 

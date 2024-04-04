@@ -45,8 +45,6 @@ class Courses(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = models.Manager()
 
-    # def __str__(self):
-	#     return self.course_name
 
 
 
