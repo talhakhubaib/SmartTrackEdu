@@ -47,7 +47,7 @@ Follow the prompts to add your email, username, and password for super user.
 
 For HOD / SuperAdmin:
 
-Email: admin@gmail.com,  
+Email: admin@gmail.com  ,  
 Password: admin
 
 Let's revolutionize education together with SmartTrackEdu! 🎉
