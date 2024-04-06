@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib import messages
-from django.core.files.storage import FileSystemStorage #To upload Profile Picture
+from django.core.files.storage import FileSystemStorage
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
@@ -12,8 +12,6 @@ from ste_app.models import CustomUser, Staffs, Courses, Subjects, Students, Sess
 
 
 def staff_home(request):
-    # Fetching All Students under Staff
-
     subjects = Subjects.objects.filter(staff_id=request.user.id)
     course_id_list = []
     for subject in subjects:
@@ -21,21 +19,16 @@ def staff_home(request):
         course_id_list.append(course.id)
     
     final_course = []
-    # Removing Duplicate Course Id
     for course_id in course_id_list:
         if course_id not in final_course:
             final_course.append(course_id)
     
     students_count = Students.objects.filter(course_id__in=final_course).count()
     subject_count = subjects.count()
-
-    # Fetch All Attendance Count
     attendance_count = Attendance.objects.filter(subject_id__in=subjects).count()
-    # Fetch All Approve Leave
     staff = Staffs.objects.get(admin=request.user.id)
     leave_count = LeaveReportStaff.objects.filter(staff_id=staff.id, leave_status=1).count()
 
-    #Fetch Attendance Data by Subjects
     subject_list = []
     attendance_list = []
     for subject in subjects:
@@ -133,23 +126,15 @@ def staff_feedback_save(request):
             messages.error(request, "Failed to Send Feedback.")
             return redirect('staff_feedback')
 
-
-# WE don't need csrf_token when using Ajax
 @csrf_exempt
 def get_students(request):
-    # Getting Values from Ajax POST 'Fetch Student'
     subject_id = request.POST.get("subject")
     session_year = request.POST.get("session_year")
-
-    # Students enroll to Course, Course has Subjects
-    # Getting all data from subject model based on subject_id
     subject_model = Subjects.objects.get(id=subject_id)
 
     session_model = SessionYearModel.objects.get(id=session_year)
 
     students = Students.objects.filter(course_id=subject_model.course_id, session_year_id=session_model)
-
-    # Only Passing Student Id and Student Name Only
     list_data = []
 
     for student in students:
@@ -163,8 +148,6 @@ def get_students(request):
 
 @csrf_exempt
 def save_attendance_data(request):
-    # Get Values from Staf Take Attendance form via AJAX (JavaScript)
-    # Use getlist to access HTML Array/List Input Data
     student_ids = request.POST.get("student_ids")
     subject_id = request.POST.get("subject_id")
     attendance_date = request.POST.get("attendance_date")
@@ -174,16 +157,11 @@ def save_attendance_data(request):
     session_year_model = SessionYearModel.objects.get(id=session_year_id)
 
     json_student = json.loads(student_ids)
-    # print(dict_student[0]['id'])
-
-    # print(student_ids)
     try:
-        # First Attendance Data is Saved on Attendance Model
         attendance = Attendance(subject_id=subject_model, attendance_date=attendance_date, session_year_id=session_year_model)
         attendance.save()
 
         for stud in json_student:
-            # Attendance of Individual Student saved on AttendanceReport Model
             student = Students.objects.get(admin=stud['id'])
             attendance_report = AttendanceReport(student_id=student, attendance_id=attendance, status=stud['status'])
             attendance_report.save()
@@ -206,21 +184,12 @@ def staff_update_attendance(request):
 @csrf_exempt
 def get_attendance_dates(request):
     
-
-    # Getting Values from Ajax POST 'Fetch Student'
     subject_id = request.POST.get("subject")
     session_year = request.POST.get("session_year_id")
-
-    # Students enroll to Course, Course has Subjects
-    # Getting all data from subject model based on subject_id
     subject_model = Subjects.objects.get(id=subject_id)
 
     session_model = SessionYearModel.objects.get(id=session_year)
-
-    # students = Students.objects.filter(course_id=subject_model.course_id, session_year_id=session_model)
     attendance = Attendance.objects.filter(subject_id=subject_model, session_year_id=session_model)
-
-    # Only Passing Student Id and Student Name Only
     list_data = []
 
     for attendance_single in attendance:
@@ -232,12 +201,10 @@ def get_attendance_dates(request):
 
 @csrf_exempt
 def get_attendance_student(request):
-    # Getting Values from Ajax POST 'Fetch Student'
     attendance_date = request.POST.get('attendance_date')
     attendance = Attendance.objects.get(id=attendance_date)
 
     attendance_data = AttendanceReport.objects.filter(attendance_id=attendance)
-    # Only Passing Student Id and Student Name Only
     list_data = []
 
     for student in attendance_data:
@@ -259,7 +226,6 @@ def update_attendance_data(request):
     try:
         
         for stud in json_student:
-            # Attendance of Individual Student saved on AttendanceReport Model
             student = Students.objects.get(admin=stud['id'])
 
             attendance_report = AttendanceReport.objects.get(student_id=student, attendance_id=attendance)
@@ -336,7 +302,6 @@ def staff_add_result_save(request):
         subject_obj = Subjects.objects.get(id=subject_id)
 
         try:
-            # Check if Students Result Already Exists or not
             check_exist = StudentResult.objects.filter(subject_id=subject_obj, student_id=student_obj).exists()
             if check_exist:
                 result = StudentResult.objects.get(subject_id=subject_obj, student_id=student_obj)
