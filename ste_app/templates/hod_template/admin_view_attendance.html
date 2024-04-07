@@ -26,14 +26,14 @@
                                 <div class="col-12">
                                     {% for message in messages %}
                                     {% if message.tags == "error" %}
-                                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert">
                                         {{ message }}
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                         </div>
                                     {% elif message.tags == "success" %}
-                                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
                                         {{ message }}
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -71,11 +71,11 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <button type="button" class="btn btn-warning" style="color: black; font-weight: 510;" id="fetch_attendance">View</button>
+                            <button type="button" class="btn btn-warning" id="btn" id="fetch_attendance">View</button>
                         </div>
 
                         <div class="card-footer">
-                            <div class="form-group" id="attendance_block" style="display:none;">
+                            <div class="form-group" id="attendance_block" id="dspNone">
                                     <label>Attendance Date </label>
                                     <select class="form-control" name="attendance_date" id="attendance_date">
                                         
@@ -84,16 +84,16 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="alert alert-danger" id="error_attendance" style="display:none;">
+                                <div class="alert alert-danger" id="error_attendance" id="dspNone">
 
                                 </div>
 
-                                <div class="alert alert-success" id="success_attendance" style="display:none;">
+                                <div class="alert alert-success" id="success_attendance" id="dspNone">
                                     
                                 </div>
                             </div>
 
-                            <div class="card-footer" id="fetch_student_block" style="display:none;">
+                            <div class="card-footer" id="fetch_student_block" id="dspNone">
 
                                 <button type="button" class="btn btn-primary" id="fetch_student">Fetch Student Data</button>
                             </div>
