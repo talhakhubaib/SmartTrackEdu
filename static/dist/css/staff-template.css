@@ -10,3 +10,9 @@
 #dspNone{
     display: none;
 }
+#bgColor{
+    background-color: #101820;
+}
+#txtColor{
+    color: #FEE715;
+}
