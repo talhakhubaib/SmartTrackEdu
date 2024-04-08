@@ -1,10 +1,10 @@
 {% load static %}
 
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background: linear-gradient(-71deg, #101820 0 50%, black 50% 100%)">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" id="linearGradient‎">
       <!-- Brand Logo -->
-      <a href="{% url 'staff_home' %}" class="brand-link" style="color: yellow; font-weight: bold;">
+      <a href="{% url 'staff_home' %}" class="brand-link" id="fontColorwithWeight‎">
         <img src="{% static 'dist/img/AdminLTELogo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
+            id="opacityValue‎">
         <span class="brand-text font-weight-light">SmartTrackEdu</span>
       </a>
 
@@ -16,7 +16,7 @@
             <img src="{% static 'dist/img/staff.png' %}" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="{% url 'staff_profile' %}" class="d-block" style="color: yellow;">{{ user.first_name }} {{ user.last_name }}</a>
+            <a href="{% url 'staff_profile' %}" class="d-block" id="fontColor‎">{{ user.first_name }} {{ user.last_name }}</a>
           </div>
         </div>
 
@@ -28,7 +28,7 @@
             
             <li class="nav-item">
               {% url 'staff_home' as staff_home %}
-              <a href="{{ staff_home }}" class="nav-link {% if request.path == staff_home %} active {% endif %}" style="color: yellow;">
+              <a href="{{ staff_home }}" class="nav-link {% if request.path == staff_home %} active {% endif %}" id="fontColor‎">
                 <i class="nav-icon fas fa-laptop-house"></i>
                 <p>
                   Home
@@ -39,7 +39,7 @@
 
             <li class="nav-item">
               {% url 'staff_take_attendance' as staff_take_attendance %}
-              <a href="{{ staff_take_attendance }}" class="nav-link {% if request.path == staff_take_attendance %} active {% endif %}" style="color: yellow;">
+              <a href="{{ staff_take_attendance }}" class="nav-link {% if request.path == staff_take_attendance %} active {% endif %}" id="fontColor‎">
                 <i class="nav-icon fas fa-calendar-plus"></i>
                 <p>
                   Take Attendance
@@ -50,7 +50,7 @@
 
             <li class="nav-item">
               {% url 'staff_update_attendance' as staff_update_attendance %}
-              <a href="{{ staff_update_attendance }}" class="nav-link {% if request.path == staff_update_attendance %} active {% endif %}" style="color: yellow;">
+              <a href="{{ staff_update_attendance }}" class="nav-link {% if request.path == staff_update_attendance %} active {% endif %}" id="fontColor‎">
                 <i class="nav-icon fas fa-calendar-alt"></i>
                 <p>
                   View Update Attendance
@@ -61,7 +61,7 @@
 
             <li class="nav-item">
               {% url 'staff_add_result' as staff_add_result %}
-              <a href="{{ staff_add_result }}" class="nav-link {% if request.path == staff_add_result %} active {% endif %}" style="color: yellow;">
+              <a href="{{ staff_add_result }}" class="nav-link {% if request.path == staff_add_result %} active {% endif %}" id="fontColor‎">
                 <i class="nav-icon fas fa-address-card"></i>
                 <p>
                   Add Result
@@ -72,7 +72,7 @@
 
             <li class="nav-item">
               {% url 'staff_apply_leave' as staff_apply_leave %}
-              <a href="{{ staff_apply_leave }}" class="nav-link {% if request.path == staff_apply_leave %} active {% endif %}" style="color: yellow;">
+              <a href="{{ staff_apply_leave }}" class="nav-link {% if request.path == staff_apply_leave %} active {% endif %}" id="fontColor‎">
                 <i class="nav-icon fas fa-coffee"></i>
                 <p>
                   Apply Leave
@@ -83,7 +83,7 @@
 
             <li class="nav-item">
               {% url 'staff_feedback' as staff_feedback %}
-              <a href="{{ staff_feedback }}" class="nav-link {% if request.path == staff_feedback %} active {% endif %}" style="color: yellow;">
+              <a href="{{ staff_feedback }}" class="nav-link {% if request.path == staff_feedback %} active {% endif %}" id="fontColor‎">
                 <i class="nav-icon fas fa-comments"></i>
                 <p>
                   Feedback
