@@ -24,7 +24,7 @@ Welcome to SmartTrackEdu, a powerful educational management system built on Djan
 ### Pre-Requisites:
 1. Install Git Version Control: [Download](https://git-scm.com/)
 2. Install Python Latest Version: [Download](https://www.python.org/downloads/)
-3. Install Pip (Package Manager): [Installation Guide](https://pip.pypa.io/en/stable/installing/)
+3. Install Pip (Package Manager): [Installation Guide](https://pip.pypa.io/en/stable/installation/)
 
 ### Installation Steps:
 1. Create a folder for the project and set up a virtual environment.
