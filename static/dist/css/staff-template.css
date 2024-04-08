@@ -1,1 +1,12 @@
+#btn{
+    color: black; 
+    font-weight: 510;
+}
 
+#alert{
+    margin-top: 10px;
+}
+
+#dspNone{
+    display: none;
+}
