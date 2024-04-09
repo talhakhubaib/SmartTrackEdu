@@ -11,7 +11,7 @@
 <section class="content">
     <div class="container-fluid">
 
-        <a class="btn btn-warning" style="color: black; font-weight: 510;" href="{% url 'add_student' %}" role="button">+ Add Student</a>
+        <a class="btn btn-warning" id="btn" href="{% url 'add_student' %}" role="button">+ Add Student</a>
         <br />&nbsp;
 
         {% if messages %}
@@ -19,14 +19,14 @@
             <div class="col-12">
                 {% for message in messages %}
                 {% if message.tags == "error" %}
-                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert">
                     {{ message }}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 {% elif message.tags == "success" %}
-                <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
                     {{ message }}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -47,7 +47,7 @@
                         <h3 class="card-title">Student Details</h3>
 
                         <div class="card-tools">
-                            <div class="input-group input-group-sm" style="width: 150px;">
+                            <div class="input-group input-group-sm" id="cw">
                                 <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
                                 <div class="input-group-append">
@@ -87,7 +87,7 @@
                                     <td>{{ student.admin.email }}</td>
                                     <td>{{ student.address }}</td>
                                     <td>{{ student.gender }}</td>
-                                    <td> <img src="{{ student.profile_pic }}" style="width: 100px;" /> </td>
+                                    <td> <img src="{{ student.profile_pic }}" id="cw2" /> </td>
                                     <td>{{ student.session_year_id.session_start_year }}</td>
                                     <td>{{ student.session_year_id.session_end_year }}</td>
                                     <td>{{ student.course_id.course_name }}</td>
