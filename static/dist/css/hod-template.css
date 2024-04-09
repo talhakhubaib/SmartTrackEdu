@@ -10,3 +10,21 @@
 #dspNone{
     display: none;
 }
+#bgColor{
+    background-color: #101820;
+}
+#txtColor{
+    color: #FEE715;
+}
+.charts{
+    min-height: 250px; 
+    height: 250px; 
+    max-height: 250px; 
+    max-width: 100%;
+}
+#cw{
+    width: 150px;
+}
+#cw2{
+    width: 100px;
+}
