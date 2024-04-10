@@ -28,3 +28,29 @@
 #cw2{
     width: 100px;
 }
+#whiteColor{
+    color: white;
+}
+#sidebarBackgroundColor{
+    background: linear-gradient(-71deg, #101820 0 50%, black 50% 100%);
+}
+#fontColorwithWeight{
+    color: yellow; 
+    font-weight: bold;
+}
+#fontColor{
+    color: yellow; 
+}
+#opacityValue{
+    opacity: .8;
+}
+#emailErrorRed{
+    color: red; 
+    padding: 5px; 
+    font-weight: bold;
+}
+#emailErrorGreen{
+    color: green; 
+    padding: 5px; 
+    font-weight: bold;
+}
