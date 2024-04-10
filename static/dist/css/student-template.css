@@ -1,0 +1,38 @@
+#btn{
+    color: black; 
+    font-weight: 510;
+}
+
+#alert{
+    margin-top: 10px;
+}
+
+#dspNone{
+    display: none;
+}
+#bgColor{
+    background-color: #101820;
+}
+#txtColor{
+    color: #FEE715;
+}
+#linearGradient{
+    background: linear-gradient(-71deg, #101820 0 50%, black 50% 100%)
+}
+#fontColor{
+    color: yellow; 
+}
+#fontColorwithWeight{
+    color: yellow; 
+    font-weight: bold;
+}
+#opacityValue{
+    opacity: .8;
+}
+
+.charts {
+    min-height: 250px; 
+    height: 250px; 
+    max-height: 250px; 
+    max-width: 100%;
+}
