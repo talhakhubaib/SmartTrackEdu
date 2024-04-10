@@ -28,3 +28,31 @@
 #cw2{
     width: 100px;
 }
+#linearGradient{
+    background: linear-gradient(-71deg, #101820 0 50%, black 50% 100%);
+}
+#txtAlign{
+    text-align: center;
+}
+#maxWidth{
+    max-width: 400px;
+}
+#loginText{
+    color: #FEE715; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#inputField{
+    background-color: #101820; 
+    color: #FEE715; 
+    border-color: #FEE715;
+}
+#inputGroupTxt{
+    background-color: #101820; 
+    border-color: #FEE715;
+}
+#signInButton{
+    background-color: #FEE715; 
+    color: #101820; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-weight: bold;
+}

@@ -2,39 +2,39 @@
 {% load static %} 
 
 {% block content %}
-<body class="hold-transition login-page" style="background: linear-gradient(-71deg, #101820 0 50%, black 50% 100%)">
+<body class="hold-transition login-page" id="linearGradient">
   <div class="login-box-container">
-    <div class="login-logo" style="text-align: center;">
+    <div class="login-logo" id="txtAlign">
       <a href="{% url 'login' %}">
-        <img src="{% static 'dist/img/logo.png' %}" alt="logo image" style="max-width: 400px;">
+        <img src="{% static 'dist/img/logo.png' %}" alt="logo image" id="maxWidth">
       </a>
     </div>
     <div class="login-form-container">
       <div class="card">
-        <div class="card-body login-card-body" style="background-color: #101820;">
-          <p class="login-box-msg" style="color: #FEE715; font-family: Verdana, Geneva, Tahoma, sans-serif;">Sign in to your account</p>
+        <div class="card-body login-card-body" id="bgColor">
+          <p class="login-box-msg" id="loginText">Sign in to your account</p>
 
           <form action="{% url 'doLogin' %}" method="POST">
             {% csrf_token %}
             <div class="input-group mb-3">
-              <input type="email" class="form-control rounded-pill" placeholder="Email" name="email" style="background-color: #101820; color: #FEE715; border-color: #FEE715;">
+              <input type="email" class="form-control rounded-pill" placeholder="Email" name="email" id="inputField">
               <div class="input-group-append">
-                <div class="input-group-text rounded-pill" style="background-color: #101820; border-color: #FEE715;">
-                  <span class="fas fa-envelope" style="color: #FEE715;"></span>
+                <div class="input-group-text rounded-pill" id="inputGroupTxt">
+                  <span class="fas fa-envelope" id="txtColor"></span>
                 </div>
               </div>
             </div>
             <div class="input-group mb-3">
-              <input type="password" class="form-control rounded-pill" placeholder="Password" name="password" style="background-color: #101820; color: #FEE715; border-color: #FEE715;">
+              <input type="password" class="form-control rounded-pill" placeholder="Password" name="password" id="inputField">
               <div class="input-group-append">
-                <div class="input-group-text rounded-pill" style="background-color: #101820; border-color: #FEE715;">
-                  <span class="fas fa-lock" style="color: #FEE715;"></span>
+                <div class="input-group-text rounded-pill" id="inputGroupTxt">
+                  <span class="fas fa-lock" id="txtColor"></span>
                 </div>
               </div>
             </div>
 
             <div class="col-12">
-              <button type="submit" class="btn btn-primary btn-block rounded-pill" style="background-color: #FEE715; color: #101820; font-family: Verdana, Geneva, Tahoma, sans-serif,; font-weight: bold;">Sign In</button>
+              <button type="submit" class="btn btn-primary btn-block rounded-pill" id="signInButton">Sign In</button>
             </div>
 
             <!-- Display Messages -->
@@ -42,7 +42,7 @@
               {% if messages %}
                 {% for message in messages %}
                   {% if message.tags == "error" %}
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert">
                       {{ message }}
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
