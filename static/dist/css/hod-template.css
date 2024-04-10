@@ -44,3 +44,13 @@
 #opacityValue{
     opacity: .8;
 }
+#emailErrorRed{
+    color: red; 
+    padding: 5px; 
+    font-weight: bold;
+}
+#emailErrorGreen{
+    color: green; 
+    padding: 5px; 
+    font-weight: bold;
+}
