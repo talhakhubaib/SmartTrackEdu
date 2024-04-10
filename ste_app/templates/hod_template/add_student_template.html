@@ -46,10 +46,10 @@
                 .done(function(response) {
                     if (response == "True") {
                         $(".email_error").remove();
-                        $("<span class='email_error' style='color: red; padding: 5px; font-weight: bold;'> Email Not Available. </span>").insertAfter("#id_email")
+                        $("<span class='email_error' id='emailErrorRed'> Email Not Available. </span>").insertAfter("#id_email")
                     } else {
                         $(".email_error").remove();
-                        $("<span class='email_error' style='color: green; padding: 5px; font-weight: bold;'> Email Available. </span>").insertAfter("#id_email")
+                        $("<span class='email_error' id='emailErrorGreen'> Email Available. </span>").insertAfter("#id_email")
                     }
                 })
                 .fail(function() {
@@ -74,10 +74,10 @@
                 .done(function(response) {
                     if (response == "True") {
                         $(".username_error").remove();
-                        $("<span class='username_error' style='color: red; padding: 5px; font-weight: bold;'> Username Not Available. </span>").insertAfter("#id_username")
+                        $("<span class='username_error' id='emailErrorRed'> Username Not Available. </span>").insertAfter("#id_username")
                     } else {
                         $(".username_error").remove();
-                        $("<span class='username_error' style='color: green; padding: 5px; font-weight: bold;'> Username Available. </span>").insertAfter("#id_username")
+                        $("<span class='username_error' id='emailErrorGreen'> Username Available. </span>").insertAfter("#id_username")
                     }
                 })
                 .fail(function() {
