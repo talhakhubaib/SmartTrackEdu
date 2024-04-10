@@ -31,3 +31,13 @@
 #whiteColor{
     color: white;
 }
+#sidebarBackgroundColor{
+    background: linear-gradient(-71deg, #101820 0 50%, black 50% 100%);
+}
+#fontColorwithWeight{
+    color: yellow; 
+    font-weight: bold;
+}
+#fontColor{
+    color: yellow; 
+}
