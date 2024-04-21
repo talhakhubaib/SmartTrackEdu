@@ -5,6 +5,8 @@ from .import HodViews, StaffViews, StudentViews
 
 
 urlpatterns = [
+
+    # urls of admin 
     path('', views.loginPage, name="login"),
     path('doLogin/', views.doLogin, name="doLogin"),
     path('get_user_details/', views.get_user_details, name="get_user_details"),
