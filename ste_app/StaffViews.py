@@ -147,7 +147,7 @@ def get_students(request):
 
 
 @csrf_exempt
-def save_attendance_data(request):
+def save_attendance_data(request):   # this will save the data of attendance
     student_ids = request.POST.get("student_ids")
     subject_id = request.POST.get("subject_id")
     attendance_date = request.POST.get("attendance_date")
