@@ -4,7 +4,7 @@ from .models import CustomUser, AdminHOD, Staffs, Courses, Subjects, Students, A
 class UserModel(UserAdmin):
     pass
 
-
+# here we have registered the sites
 admin.site.register(CustomUser, UserModel)
 
 admin.site.register(AdminHOD)
