@@ -43,7 +43,7 @@ $ python manage.py createsuperuser
 
 Follow the prompts to add your email, username, and password for super user.
 
-## Option 2: Use These Credentials
+## Option 2: Use This Credential
 
 For HOD / SuperAdmin:
 
