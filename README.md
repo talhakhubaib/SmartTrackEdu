@@ -47,7 +47,7 @@ Follow the prompts to add your email, username, and password for super user.
 
 For HOD / Pricipal / Super User:
 
-Email: talha@gmail.com  ,  
+Email: admin@smarttrack.edu.com  ,  
 Password: admin
 
 Let's revolutionize education together with SmartTrackEdu! 🎉
