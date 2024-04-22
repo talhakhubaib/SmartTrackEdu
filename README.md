@@ -43,11 +43,11 @@ $ python manage.py createsuperuser
 
 Follow the prompts to add your email, username, and password for super user.
 
-## Option 2: Use This Credential
+## Option 2: Use These Credentials
 
-For HOD / SuperAdmin:
+For HOD / Pricipal / Super User:
 
-Email: admin@gmail.com  ,  
+Email: talha@gmail.com  ,  
 Password: admin
 
 Let's revolutionize education together with SmartTrackEdu! 🎉
