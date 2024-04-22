@@ -52,17 +52,16 @@ Password: admin
 
 ## A Quick Tour:
 
-| Title                           | Title                             |
-|---------------------------------|-----------------------------------|
-| (![login](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/50cda112-bae7-4151-b905-39bdf547f7b6)
-) | (![Logout and Update](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/c2fa5db5-4ecd-4a07-a9f9-dd62ffb92b4c)
-) |
-| (![Admin Dashboard (A)](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/3dedb00a-6f66-410c-a77d-f63cd3442630)
-) | (![Admin Dashboard (B)](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/56b1ef5d-282c-4170-9f90-dbe1f7814281)
-) |
-| (![Staff Dashboard](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/74a07bbe-731a-4407-b3b8-41541e18b7a9)
-) | (![Student Dashboard](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/8f9f8635-85c0-4848-a0a1-68bec9d05d89)
-) |
+| ![Login Page](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/50cda112-bae7-4151-b905-39bdf547f7b6)   | ![Logout Functionality](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/c2fa5db5-4ecd-4a07-a9f9-dd62ffb92b4c) |
+|:--------------------------------------:|:----------------------------------------:|
+| **Login Page**                         | **Logout and Update Functionality**      |
+|                                        |                                          |
+| ![Admin Dashboard (A)](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/3dedb00a-6f66-410c-a77d-f63cd3442630) | ![Admin Dashboard (B)](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/56b1ef5d-282c-4170-9f90-dbe1f7814281) |
+| **Admin Dashboard (A)**                | **Admin Dashboard (B)**                  |
+|                                        |                                          |
+| ![Staff Dashboard](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/74a07bbe-731a-4407-b3b8-41541e18b7a9) | ![Student Dashboard](https://github.com/talhakhubaib/SmartTrackEdu/assets/164906625/8f9f8635-85c0-4848-a0a1-68bec9d05d89) |
+| **Staff Dashboard**                    | **Student Dashboard**                    |
+
 
 
 Let's revolutionize education together with SmartTrackEdu! 🎉
